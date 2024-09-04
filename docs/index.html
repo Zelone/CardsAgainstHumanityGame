@@ -58,7 +58,7 @@ $( "#nav-placeholder" ).load( "/nav.html" );
         
     data['data']['packs'].forEach(element => {
         checkboxi = `<label class="list-group-item">
-            <input class="form-check-input me-1" type="checkbox" name='cah-pack-list-checkbox' value="`+element['id']+`" />
+            <input class="form-check-input me-1 col-lg-1 col-md-2 col-sm-3 " type="checkbox" name='cah-pack-list-checkbox' value="`+element['id']+`" />
             `+element['name']+`
             </label>`
    
@@ -66,8 +66,7 @@ $( "#nav-placeholder" ).load( "/nav.html" );
         node.innerHTML = checkboxi
         document.getElementById('cah-pack-list').appendChild(node.childNodes[0])
     });
-        checkboxi = `<button class="btn btn-primary" type="submit" name="submit" >
-            Submit</button>`
+        checkboxi = ``
    
         node = document.createElement('div')
         node.innerHTML = checkboxi
@@ -83,7 +82,12 @@ function loadpacks(node){
     <div class="container">
         <div class="container">
             <div class="list-group">
-                <form action=""  id="cah-pack-list" onsubmit="loadpacks(this)"></form>
+                <form action=""  onsubmit="loadpacks(this)">
+<div class="row" id="cah-pack-list"  ></div>
+                    <button class="btn btn-primary" type="submit" name="submit" >
+                        Submit</button>
+                </form>
+           
             </div>
             
         </div>
