@@ -55,19 +55,30 @@ $( "#nav-placeholder" ).load( "/nav.html" );
 <script>
     
     $.getJSON( "./data/meta.json", function( data ) {
+        
+    data['data']['packs'].forEach(element => {
+        console.log(element)
         checkboxi = `<label class="list-group-item">
-        <input class="form-check-input me-1" type="checkbox" value="`+i+`" />
-        First checkbox
+        <input class="form-check-input me-1" type="checkbox" name='cah-pack-list-checkbox' value="`+element['id']+`" />
+        `+element['name']+`
     </label>`
-    console.log(data['data'])
-    })
+    node = document.createElement('div')
+    node.innerHTML = checkboxi
 
+    document.getElementById('cah-packs-list').appendChild(node.childNodes[0])
+    });
+    
+    })
+function loadpacks(node){
+    console.log('data')
+    console.log(node.value)
+}
     
 </script>
     <div class="container">
         <div class="container">
-            <div class="list-group">
-                
+            <div class="list-group" id="cah-pack-list">
+                <form action="" onsubmit="loadpacks(this)"></form>
             </div>
             
         </div>
