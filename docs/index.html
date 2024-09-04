@@ -57,17 +57,21 @@ $( "#nav-placeholder" ).load( "/nav.html" );
     $.getJSON( "./data/meta.json", function( data ) {
         
     data['data']['packs'].forEach(element => {
-        console.log(element)
         checkboxi = `<label class="list-group-item">
-        <input class="form-check-input me-1" type="checkbox" name='cah-pack-list-checkbox' value="`+element['id']+`" />
-        `+element['name']+`
-    </label>`
+            <input class="form-check-input me-1" type="checkbox" name='cah-pack-list-checkbox' value="`+element['id']+`" />
+            `+element['name']+`
+            </label>`
    
-    node = document.createElement('div')
-    node.innerHTML = checkboxi
-    console.log(node)
-    document.getElementById('cah-pack-list').appendChild(node.childNodes[0])
+        node = document.createElement('div')
+        node.innerHTML = checkboxi
+        document.getElementById('cah-pack-list').appendChild(node.childNodes[0])
     });
+        checkboxi = `<button class="btn btn-primary" type="submit" name="submit" >
+            Submit</button>`
+   
+        node = document.createElement('div')
+        node.innerHTML = checkboxi
+        document.getElementById('cah-pack-list').appendChild(node.childNodes[0])
     
     })
 function loadpacks(node){
@@ -84,6 +88,7 @@ function loadpacks(node){
             
         </div>
     </div>
+    
     
 
     <div class="container">
