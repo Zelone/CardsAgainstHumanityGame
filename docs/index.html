@@ -36,67 +36,61 @@
     </script>
     <script src="reloadscript.js"></script>
     <div id="nav-placeholder">
-        
+
     </div>
 
     <script>
-$( "#nav-placeholder" ).load( "/nav.html" );
+        $("#nav-placeholder").load("/nav.html");
     </script>
     <div class="container">
         <div class="container">
             <div class="container shadow">
                 <p>
-                    Welcome to my cards against humanity test game 
+                    Welcome to my cards against humanity test game
                 </p>
 
             </div>
         </div>
     </div>
-<script>
-    
-    $.getJSON( "./data/meta.json", function( data ) {
-        
-    data['data']['packs'].forEach(element => {
-        checkboxi = `<label class="list-group-item">
-            <input class="form-check-input me-1 col-lg-1 col-md-2 col-sm-3 " type="checkbox" name='cah-pack-list-checkbox' value="`+element['id']+`" />
-            `+element['name']+`
+    <script>
+
+        $.getJSON("./data/meta.json", function (data) {
+
+            data['data']['packs'].forEach(element => {
+                checkboxi = `<label class="list-group-item col-lg-1 col-md-2 col-sm-3">
+            <input class="form-check-input me-1  " type="checkbox" name='cah-pack-list-checkbox' value="`+ element['id'] + `" />
+            `+ element['name'] + `
             </label>`
-   
-        node = document.createElement('div')
-        node.innerHTML = checkboxi
-        document.getElementById('cah-pack-list').appendChild(node.childNodes[0])
-    });
-        checkboxi = ``
-   
-        node = document.createElement('div')
-        node.innerHTML = checkboxi
-        document.getElementById('cah-pack-list').appendChild(node.childNodes[0])
-    
-    })
-function loadpacks(node){
-    document.getElementsByName('cah-pack-list-checkbox').forEach(n=>{
-        if(n.checked){
-            (n.value)
-        }        
-    })
-}
-    
-</script>
+
+                node = document.createElement('div')
+                node.innerHTML = checkboxi
+                document.getElementById('cah-pack-list').appendChild(node.childNodes[0])
+            });
+            checkboxi = ``
+
+            node = document.createElement('div')
+            node.innerHTML = checkboxi
+            document.getElementById('cah-pack-list').appendChild(node.childNodes[0])
+
+        })
+       
+
+    </script>
     <div class="container">
         <div class="container">
             <div class="list-group">
-                <form action="./cah.html" method="get"  onsubmit="event.preventdefault();loadpacks(this)">
-<div class="row" id="cah-pack-list"  ></div>
-                    <button class="btn btn-primary" type="submit" name="submit" >
+                <form action="./cah.html" method="get">
+                    <div class="row checkbox-group required" id="cah-pack-list"></div>
+                    <button class="btn btn-primary" type="submit">
                         Submit</button>
                 </form>
-           
+
             </div>
-            
+
         </div>
     </div>
-    
-    
+
+
 
     <div class="container">
         <div class="container">

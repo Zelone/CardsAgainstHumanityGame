@@ -36,23 +36,42 @@
     </script>
     <script src="reloadscript.js"></script>
     <div id="nav-placeholder">
-        
+
     </div>
 
     <script>
-$( "#nav-placeholder" ).load( "/nav.html" );
+        $("#nav-placeholder").load("/nav.html");
     </script>
+    <script>
+        let params = new URLSearchParams(location.search);
+        items=params.getAll('cah-pack-list-checkbox')
+        number_blackcard = 1
+        number_whitecard = 4
+        
+        items.forEach(item=>{
+            $.getJSON("./data/File"+(item-1)+".json", function (data) {
+                console.log(data['data']['packs'][0]['name'])
+                console.log(data['data']['packs'][0]['white'][0]['text'])
+            })
+        })
+
+    </script>
+
+
+
+
+
     <div class="container">
         <div class="container">
             <div class="container shadow">
                 <p>
-                    Welcome to my cards against humanity test game 
+                    Welcome to my cards against humanity test game
                 </p>
 
             </div>
         </div>
     </div>
-    
+
 
     <div class="container">
         <div class="container">
