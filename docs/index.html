@@ -59,7 +59,7 @@
             data['data']['packs'].forEach(element => {
                 checkboxi = `<label class="list-group-item col-lg-1 col-md-2 col-sm-3">
             <input class="form-check-input me-1  " type="checkbox" name='cah-pack-list-checkbox' value="`+ element['id'] + `" />
-            `+ element['name'] + `
+            `+ element['name'] + ` <br>Black Cards Count:`+element['black']+`<br>White Cards Count:`+element['white']+` 
             </label>`
 
                 node = document.createElement('div')
