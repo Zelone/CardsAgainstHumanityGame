@@ -62,9 +62,10 @@ $( "#nav-placeholder" ).load( "/nav.html" );
         <input class="form-check-input me-1" type="checkbox" name='cah-pack-list-checkbox' value="`+element['id']+`" />
         `+element['name']+`
     </label>`
+   
     node = document.createElement('div')
     node.innerHTML = checkboxi
-
+    console.log(node)
     document.getElementById('cah-packs-list').appendChild(node.childNodes[0])
     });
     
